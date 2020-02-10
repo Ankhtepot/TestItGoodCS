@@ -9,15 +9,21 @@ export class CoursesService {
   private selectedCourseId: string = null;
   private selectedCourse: Course = null;
   private courses: Course[] = null;
+  private coursesProvider: CoursesProvider = null;
 
   selectedCourseIdChanged = new EventEmitter<string>();
 
   constructor() {
-    this.courses = new CoursesProvider().getCourses();
+    this.coursesProvider = new CoursesProvider();
+    this.courses = this.coursesProvider.getCourses();
+    this.coursesProvider.loadCoursesForGroup('engeto');
   }
 
+  loadCourses(groupName: string)
+  {}
+
   getCourses() {
-    return new CoursesProvider().getCourses();
+    return this.coursesProvider.getCourses();
   }
 
   getSelectedCourse(): Course {

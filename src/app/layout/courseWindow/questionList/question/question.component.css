@@ -15,7 +15,7 @@ p:hover {
 }
 
 .question-selected {
-    background-color: lightgreen;
+    background-color: #f3f3f3;
     box-shadow: 0 0 5px 5px darkseagreen;
 }
 
@@ -48,4 +48,14 @@ p:hover {
 .question-selected-correct {
   background-color: yellow;
   box-shadow: 0 0 5px 5px #1de034;
+}
+
+.question-selected-base {
+    background-color: #f3f3f3;
+}
+
+.question-selected-checked {
+    background-color: #333333;
+    color: white;
+    box-shadow: 0 0 5px 5px lightgreen;
 }

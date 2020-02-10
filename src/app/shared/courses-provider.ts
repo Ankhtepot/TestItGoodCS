@@ -6,7 +6,7 @@ import { Test } from "./model/test.model";
 
 export class CoursesProvider {
   private courses: Course[] = [
-    new Course("Linux Akademie", "linux", [
+    new Course("Linux Akademie", "linux", 'engeto', [
       new Test("1. Lekce: Práce s Linuxem", "l1", [
         new Question(
           "Ve kterých z níže zmíněných zařízení můžeme najít Linux?",
@@ -309,10 +309,18 @@ export class CoursesProvider {
         ),
       ])
     ]),
-    new Course("Python Akademie", "python", [])
+    new Course("Python Akademie", "python", 'engetoB', [])
   ];
 
   getCourses(): Course[] {
     return JSON.parse(JSON.stringify(this.courses));
+  }
+
+  loadCoursesForGroup(userGroup: string)
+  {
+    let courses = this.getCourses();
+    let filteredCourses = courses.filter(course => course.userGroup === userGroup);
+    console.log('courseprovider: loadCourses for group' + userGroup + ' =>')
+    console.log(filteredCourses);
   }
 }
