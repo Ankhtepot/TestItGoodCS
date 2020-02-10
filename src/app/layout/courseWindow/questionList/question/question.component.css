@@ -14,10 +14,10 @@ p:hover {
     box-shadow: 0 0 5px 5px rgba(9,207,242,1);
 }
 
-.question-selected {
+/* .question-selected {
     background-color: #f3f3f3;
     box-shadow: 0 0 5px 5px darkseagreen;
-}
+} */
 
 .question-correct {
     background-color: lightgreen;
@@ -29,10 +29,10 @@ p:hover {
     box-shadow: 0 0 5px 5px #e8697e;
 }
 
-.question-submitted {
+/* .question-submitted {
     background-color: lightgreen;
     box-shadow: 0 0 5px 5px lightgreen;
-}
+} */
 
 .question-checked {
     background-color: gray;

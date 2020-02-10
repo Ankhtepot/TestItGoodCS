@@ -3,13 +3,11 @@ div {
   margin: 0;
   padding: 0;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 20%;
 }
 
-@media(max-width: 800px) {
-  div {
-    border-radius: 0;
-  }
+.app-title {
+  background: url("../resources/img/title.png") no-repeat center center/cover;
+  /* width: 200px; */
+  height: 20vh;
+  z-index: 10;
 }
-
-

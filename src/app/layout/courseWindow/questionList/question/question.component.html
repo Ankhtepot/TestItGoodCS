@@ -3,10 +3,8 @@
     'question-selected-incorrect' : (questionStates.SELECTED === state && questionStates.INCORRECT === answersState),
     'question-selected-base' : (questionStates.SELECTED === state && questionStates.BASE === answersState),
     'question-selected-checked' : (questionStates.SELECTED === state && questionStates.CHECKED === answersState),
-    'question-selected' : questionStates.SELECTED === state,
     'question-correct' : questionStates.CORRECT === state,
     'question-incorrect' : questionStates.INCORRECT === state,
-    'question-submitted' : questionStates.SUBMITTED === state,
     'question-checked' : questionStates.CHECKED === state
 }"
 (click)="onClick()"

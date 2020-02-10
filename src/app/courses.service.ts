@@ -1,29 +1,38 @@
-import {EventEmitter, Injectable} from '@angular/core';
-import {Course} from './shared/model/course.model';
-import {CoursesProvider} from './shared/courses-provider';
+import { EventEmitter, Injectable } from "@angular/core";
+import { Course } from "./shared/model/course.model";
+import { CoursesProvider } from "./shared/courses-provider";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class CoursesService {
   private selectedCourseId: string = null;
   private selectedCourse: Course = null;
   private courses: Course[] = null;
   private coursesProvider: CoursesProvider = null;
+  private noCoursesFound: boolean = false;
 
   selectedCourseIdChanged = new EventEmitter<string>();
+  notifyCoursesLoaded = new EventEmitter<boolean>();
 
   constructor() {
     this.coursesProvider = new CoursesProvider();
-    this.courses = this.coursesProvider.getCourses();
-    this.coursesProvider.loadCoursesForGroup('engeto');
   }
 
-  loadCourses(groupName: string)
-  {}
+  loadCoursesForGroup(groupName: string) {
+    this.courses = this.coursesProvider.loadCoursesForGroup(groupName);
+
+    if (this.courses === null || this.courses.length <= 0) {
+      this.noCoursesFound = true;
+      this.notifyCoursesLoaded.emit(false);
+    } else {
+      this.noCoursesFound = false;
+      this.notifyCoursesLoaded.emit(true);
+    }
+  }
 
   getCourses() {
-    return this.coursesProvider.getCourses();
+    return this.courses;
   }
 
   getSelectedCourse(): Course {

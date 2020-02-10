@@ -12,7 +12,7 @@ import { TestDetailComponent } from "./layout/courseWindow/testsList/testDetail/
 import { AnswerListComponent } from "./layout/courseWindow/answerList/answer-list.component";
 import { QuestionComponent } from "./layout/courseWindow/questionList/question/question.component";
 import { AnswerComponent } from "./layout/courseWindow/answerList/answer/answer.component";
-import { ToolbarComponent } from "./layout/header/toolbar/toolbar.component";
+import { ToolbarComponent } from "./layout/toolbar/toolbar.component";
 
 @NgModule({
   declarations: [
