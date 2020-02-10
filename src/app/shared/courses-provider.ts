@@ -149,7 +149,164 @@ export class CoursesProvider {
             new Answer(" mkdir file1 ", false),
             new Answer(" touch file1/.. ", false)
           ]
-        )
+        ),
+          new Question(
+            'Příkaz se skládá ze tří částí, které píšeme v tomto pořadí:',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('argument - přepínač - příkaz', false),
+              new Answer('přepínač - příkaz - argument', false),
+              new Answer('příkaz - přepínač - argument', true),
+              new Answer('argument - příkaz - přepínač', false)
+            ]
+          ),
+          new Question(
+            'Příkaz...',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('může obsahovat více argumentů', true),
+              new Answer('může obsahovat více přepínačů', true),
+              new Answer('se nemůže používat bez argumentů a přepínačů', false),
+              new Answer('je program, který provadí určitou operaci', true)
+            ]
+          ),
+          new Question(
+            'Jedna a dvě tečky za příkazem...',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('reprezentují operátory a odkazují na adresáře', false),
+              new Answer('reprezentují operátory a odkazují na soubory', false),
+              new Answer('reprezentují argumenty a odkazují na adresáře', true),
+              new Answer('reprezentují argumenty a odkazují na soubory', false)
+            ]
+          ),
+          new Question(
+            'Jaký je správný zápis příkazu, pokud se chceme dostat z /home/student/Documents/school do /home/student/Files/online',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('cd ../online', false),
+              new Answer('cd ../Files/online', false),
+              new Answer('cd ../../Files/online', true),
+              new Answer('cd .././Files/online', false),
+              new Answer('cd .././../Files/online', false)
+            ]
+          ),
+          new Question(
+            'Kterým příkazem se dostaneme do svého domovského adresáře?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('cd -', false),
+              new Answer('cd ~', true),
+              new Answer('cd', true),
+              new Answer('cd..', false)
+            ]
+          ),
+          new Question(
+            'Přesouváme pomocí příkazu:',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('ls ..', false),
+              new Answer('ls', false),
+              new Answer('mv', true),
+              new Answer('cd', false)
+            ]
+          ),
+          new Question(
+            'Následující příkaz/y vytvoří více souborů:',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('touch sound{a..d}.mp3', true),
+              new Answer('touch {a..d}', true),
+              new Answer('touch sound{a..d}', true),
+              new Answer('touch {a..d}.mp3', true)
+            ]
+          ),
+          new Question(
+            'Který příkaz slouží pro vypsání obsahu adresáře?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('mkdir', false),
+              new Answer('pwd', false),
+              new Answer('tree', true),
+              new Answer('cat', false),
+              new Answer('wget', false)
+            ]
+          ),
+          new Question(
+            'Jak zkopírujeme adresář DIR s celým obsahem do adresáře NEW?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('cp DIR NEW', false),
+              new Answer('cp -r DIR NEW', true),
+              new Answer('mv -r DIR NEW', false),
+              new Answer('cp * NEW', false),
+              new Answer('cp NEW DIR', false)
+            ]
+          ),
+          new Question(
+            'Mohu v příkazu (např. ls) použít více přepínačů zároveň?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('Ano. Můžu napsat např. ls -l -t', true),
+              new Answer('Ano. Můžu napsat např. ls -lt', true),
+              new Answer('Ne. Vždy můžu použít maximálně jeden přepínač.', false),
+              new Answer('Mohu použít více přepínačů, vykoná se ale jen ten první.', false)
+            ]
+          ),
+          new Question(
+            'Máme adresář s názvem Doklady, který obsahuje nějaké dokumenty. Jak vytvoříme kopii tohoto adresáře bez jeho obsahu?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('cp Doklady kopie', true),
+              new Answer('cp kopie Doklady', false),
+              new Answer('cp -r Doklady', false),
+              new Answer('cp -r Doklady kopie', false),
+              new Answer('cp -r kopie Doklady', false)
+            ]
+          ),
+          new Question(
+            'Chci si zobrazit prvních 5 řádků ze souboru ahoj.txt. Použiji:',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('cat 5 ahoj.txt', false),
+              new Answer('tail ahoj.txt', false),
+              new Answer('head ahoj.txt', false),
+              new Answer('head -n5 ahoj.txt', true),
+              new Answer('head -5 ahoj.txt', true)
+            ]
+          ),
+          new Question(
+            'Můžu příkazem rm mazat soubory i adresáře?',
+            QuestionTypes.CHECKBOX,
+            [
+              new Answer('Adresáře můžu mazat výhradně příkazem rmdir.', false),
+              new Answer('Můžu, ale s jednou výjimkou. Příkaz rm nedokáže smazat prázdný adresář.', true),
+              new Answer('Můžu, ale při mazání adresářů musím pro příkaz rm použít přepínač -r.', true)
+            ]
+          )
+      ]),
+      new Test('3. Lekce: Dokumentace', 'l3', [
+        new Question(
+          'Jaký je správný zápis pro zobrazení manuálové stránky příkazu mv?',
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer('manual mv', false),
+            new Answer('mv man', false),
+            new Answer('man mv', true),
+            new Answer('mv --man', false)
+          ]
+        ),
+        new Question(
+          'Jak se dostanu z manuálových stránek pryč?',
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer('Pomocí klávesy backspace', false),
+            new Answer('Pomocí příkazu quit', false),
+            new Answer('Pomocí klávesy Esc', false),
+            new Answer('Pomocí klávesy q', true),
+            new Answer('Nijak. Jakmile je jednou otevřu, jsem v nich navždy.', true)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", [])
