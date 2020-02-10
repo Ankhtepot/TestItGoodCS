@@ -1,5 +1,5 @@
 .answer-text {
-    margin: 0 0.5rem;
+  margin: 0 0.5rem;
 }
 
 .answer-correct {
@@ -10,7 +10,11 @@
   background: mistyrose;
 }
 
-@media(max-width: 800px) {
+.flex-h {
+  border: 1px lightblue solid;
+}
+
+@media (max-width: 800px) {
   .flex-h {
     flex-flow: column;
     justify-content: center;

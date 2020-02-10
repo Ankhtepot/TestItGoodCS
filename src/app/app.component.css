@@ -6,8 +6,13 @@ div {
 }
 
 .app-title {
-  background: url("../resources/img/title.png") no-repeat center center/cover;
-  /* width: 200px; */
+  background: url("../app/resources/img/title.png") no-repeat center
+    center/contain;
+  width: 80%;
   height: 20vh;
   z-index: 10;
+}
+
+.flex-h {
+  background-color: rgba(0, 0, 0, 0);
 }
