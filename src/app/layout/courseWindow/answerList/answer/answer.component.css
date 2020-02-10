@@ -1,0 +1,19 @@
+.answer-text {
+    margin: 0 0.5rem;
+}
+
+.answer-correct {
+  background: lightgreen;
+}
+
+.answer-incorrect {
+  background: mistyrose;
+}
+
+@media(max-width: 800px) {
+  .flex-h {
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

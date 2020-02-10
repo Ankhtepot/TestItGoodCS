@@ -1,2 +1,0 @@
-# TestItGoodCS
-Created with CodeSandbox
