@@ -310,7 +310,132 @@ export class CoursesProvider {
               false
             )
           ]
-        )
+        ),
+        new Question(
+          "Jak snadno zjistím, v jaké sekci manuálových stránkek se hledaný příkaz nachází?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Pomocí příkazu help", false),
+            new Answer("Pomocí příkazu whatis", true),
+            new Answer("Pomocí vyhledávání s /", true),
+            new Answer("Pomocí apropos", true)
+          ]
+        ),
+        new Question(
+          "Které tvrzení je pravdivé?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Příkaz apropos je alternativou k příkazu man s přepínačem --apropos.", true),
+            new Answer("Příkaz apropos prohledává pouze titulky manuálových stránek", false),
+            new Answer("Příkaz apropos vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.", true),
+            new Answer("Příkaz whatis je alternativou k příkazu man s přepínačem --whatis.", true),
+            new Answer("Příkaz whatis prohledává pouze titulky manuálových stránek", true),
+            new Answer("Příkaz whatis vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.", false)
+          ]
+        ),
+        new Question(
+          "Co znamená tučné písmo v manuálových stránkách? Znamená to, že:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("zápis musíš nahradit vhodným argumentem.", false),
+            new Answer("můžeš použít pouze jednu z možností.", false),
+            new Answer("můžeš daný argument opakovat.", false),
+            new Answer("musíš napsat přesně tak, jak je napsán v manuálových stránkách.", true)
+          ]
+        ),
+        new Question(
+          "Jaký je anglický ekvivalent k interním příkazům?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("shell builtins", true),
+            new Answer("executable files", false),
+            new Answer("builtin commands", true)
+          ]
+        ),
+        new Question(
+          "Jak zjistíme, jestli je daný příkaz interní, nebo externí?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Pomocí příkazu apropos", false),
+            new Answer("Pomocí příkazu whatis", false),
+            new Answer("Pomocí příkazu type", true)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi help a --help?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("To první je přepínač a to druhé příkaz.", false),
+            new Answer("To první je příkaz a to druhé přepínač .", true),
+            new Answer("help poskytuje nápovědu k interním příkazům.", true),
+            new Answer("--help poskytuje nápovědu k interním příkazům.", false)
+          ]
+        ),
+        new Question(
+          "Jaký je rozdíl mezi man a -help?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("man poskytuje informace o externích příkazech a --help o interních.", false),
+            new Answer("man poskytuje informace o interních příkazech a --help o externích.", false),
+            new Answer("--help vrací kratší nápovědu než man.", true),
+            new Answer("--help vrací nápovědu přímo ze souboru daného příkazu", true),
+            new Answer("man vrací nápovědu přímo ze souboru daného příkazu", false)
+          ]
+        ),
+        new Question(
+          "Jaká je alternativa k --help",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("help", false),
+            new Answer("whatis", true),
+            new Answer("--h", true),
+            new Answer("-h", false)
+          ]
+        ),
+      ]),
+      new Test('4. Lekce: Práce s textem','l4', [
+        new Question(
+          "Máme seznam žáků ve škole. Chceme si vypsat všechny žáky se jménem Katka. V souboru je ale jméno Katka s velkým i malým počátečním písmenem (Katka i katka). Jak budeme postupovat? Použijeme:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer('grep "katka" "Katka" studenti.txt', false),
+            new Answer('grep "K/katka" studenti.txt', false),
+            new Answer('grep -i "katka" studenti.txt', true),
+            new Answer('grep -i "katka"', false)
+          ]
+        ),
+        new Question(
+          "Jak zkopírujeme adresář DIR s celým obsahem do adresáře NEW?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("cp DIR NEW", false),
+            new Answer("cp -r DIR NEW", true),
+            new Answer("mv -r DIR NEW", false),
+            new Answer("cp * NEW", false),
+            new Answer("cp NEW DIR", false)
+          ]
+        ),
+        new Question(
+          "Mohu v příkazu (např. ls) použít více přepínačů zároveň?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer('Ano. Můžu napsat např. ls -l -t', true),
+            new Answer('Ano. Můžu napsat např. ls -lt', true),
+            new Answer('Ne. Vždy můžu použít maximálně jeden přepínač.', false),
+            new Answer('Mohu použít více přepínačů, vykoná se ale jen ten první."', false)
+          ]
+        ),
+        new Question(
+          "Máme adresář s názvem Doklady, který obsahuje nějaké dokumenty. Jak vytvoříme kopii tohoto adresáře?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("cp Doklady kopie", false),
+            new Answer("cp kopie Doklady", false),
+            new Answer("cp -r Doklady", false),
+            new Answer("cp -r Doklady kopie", true),
+            new Answer("cp -r kopie Doklady", false)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [])
