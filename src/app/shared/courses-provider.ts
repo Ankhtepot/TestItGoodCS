@@ -436,6 +436,77 @@ export class CoursesProvider {
             new Answer("cp -r kopie Doklady", false)
           ]
         ),
+        new Question(
+          "Chci si zobrazit prvních 5 řádků ze souboru ahoj.txt. Použiji:",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("cat 5 ahoj.txt", false),
+            new Answer("tail ahoj.txt", false),
+            new Answer("head ahoj.txt", false),
+            new Answer("head -n5 ahoj.txt", true),
+            new Answer("head -5 ahoj.txt", true)
+          ]
+        ),
+        new Question(
+          "Můžu příkazem rm mazat soubory i adresáře?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Adresáře můžu mazat výhradně příkazem rmdir.", false),
+            new Answer("Můžu, ale s jednou výjimkou. Příkaz rm nedokáže smazat prázdný adresář.", false),
+            new Answer("Můžu, ale při mazání adresářů musím pro příkaz rm použít přepínač.", true)
+          ]
+        ),
+        new Question(
+          "Vyber správné formy zápisu příkazu tr, které budou mít výstup Alps.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("echo Alpha | tr -d a | tr h s", true),
+            new Answer("echo Alpha | tr -d h | tr a s", true),
+            new Answer("echo Land | tr Land Alps", true),
+            new Answer('tr -d a h s "Alpha"', false),
+            new Answer("echo aLPh | tr [:lower:] [:upper:] | tr h s", false)
+          ]
+        ),
+        new Question(
+          "Vyber správné formy zápisu příkazu tr, které budou mít výstup Alps.",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("cut -f1 /etc/passwd", false),
+            new Answer('cut -f1 -d":" /etc/passwd', true),
+            new Answer("cat /etc/passwd | cut -f1 -d:", true),
+            new Answer('cut -f1-3 -d":" /etc/passwd', false),
+            new Answer("cut -b 1-10 /etc/passwd", false)
+          ]
+        ),
+        new Question(
+          "Který příkaz můžeme použít k očíslování řádků výstupu souboru file1?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("nl file1", true),
+            new Answer("cat -n file1", true),
+            new Answer('grep -nE ".*" file1', true)
+          ]
+        ),
+        new Question(
+          'Jaký bude výstup příkazu echo "Forever_Linux_Admin" | cut -f2 -d"_"?',
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Forever", false),
+            new Answer("Linux", true),
+            new Answer('Admin', false)
+          ]
+        ),
+        new Question(
+          "K čemu slouží příkaz diff?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Ukazuje rozdíly ve velikosti souborů.", false),
+            new Answer('Vyhledává rozdíly v obsahu souborů po řádcích.', true),
+            new Answer("Zobrazuje podrobné informace o souboru.", false),
+            new Answer('Vyhledává daný vzor v souboru.', false),
+            new Answer("Nahrazuje v souboru všechny výskyty prvního argumentu za argument druhý.", false)
+          ]
+        ),
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [])
