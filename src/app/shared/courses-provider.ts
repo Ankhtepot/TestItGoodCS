@@ -321,18 +321,32 @@ export class CoursesProvider {
             new Answer("Pomocí apropos", true)
           ]
         ),
-        new Question(
-          "Které tvrzení je pravdivé?",
-          QuestionTypes.CHECKBOX,
-          [
-            new Answer("Příkaz apropos je alternativou k příkazu man s přepínačem --apropos.", true),
-            new Answer("Příkaz apropos prohledává pouze titulky manuálových stránek", false),
-            new Answer("Příkaz apropos vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.", true),
-            new Answer("Příkaz whatis je alternativou k příkazu man s přepínačem --whatis.", true),
-            new Answer("Příkaz whatis prohledává pouze titulky manuálových stránek", true),
-            new Answer("Příkaz whatis vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.", false)
-          ]
-        ),
+        new Question("Které tvrzení je pravdivé?", QuestionTypes.CHECKBOX, [
+          new Answer(
+            "Příkaz apropos je alternativou k příkazu man s přepínačem --apropos.",
+            true
+          ),
+          new Answer(
+            "Příkaz apropos prohledává pouze titulky manuálových stránek",
+            false
+          ),
+          new Answer(
+            "Příkaz apropos vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.",
+            true
+          ),
+          new Answer(
+            "Příkaz whatis je alternativou k příkazu man s přepínačem --whatis.",
+            true
+          ),
+          new Answer(
+            "Příkaz whatis prohledává pouze titulky manuálových stránek",
+            true
+          ),
+          new Answer(
+            "Příkaz whatis vyhledává pomocí klíčového slova, jehož výskyt potom hledá napříč manuálovými stránkami.",
+            false
+          )
+        ]),
         new Question(
           "Co znamená tučné písmo v manuálových stránkách? Znamená to, že:",
           QuestionTypes.CHECKBOX,
@@ -340,7 +354,10 @@ export class CoursesProvider {
             new Answer("zápis musíš nahradit vhodným argumentem.", false),
             new Answer("můžeš použít pouze jednu z možností.", false),
             new Answer("můžeš daný argument opakovat.", false),
-            new Answer("musíš napsat přesně tak, jak je napsán v manuálových stránkách.", true)
+            new Answer(
+              "musíš napsat přesně tak, jak je napsán v manuálových stránkách.",
+              true
+            )
           ]
         ),
         new Question(
@@ -375,25 +392,33 @@ export class CoursesProvider {
           "Jaký je rozdíl mezi man a -help?",
           QuestionTypes.CHECKBOX,
           [
-            new Answer("man poskytuje informace o externích příkazech a --help o interních.", false),
-            new Answer("man poskytuje informace o interních příkazech a --help o externích.", false),
+            new Answer(
+              "man poskytuje informace o externích příkazech a --help o interních.",
+              false
+            ),
+            new Answer(
+              "man poskytuje informace o interních příkazech a --help o externích.",
+              false
+            ),
             new Answer("--help vrací kratší nápovědu než man.", true),
-            new Answer("--help vrací nápovědu přímo ze souboru daného příkazu", true),
-            new Answer("man vrací nápovědu přímo ze souboru daného příkazu", false)
+            new Answer(
+              "--help vrací nápovědu přímo ze souboru daného příkazu",
+              true
+            ),
+            new Answer(
+              "man vrací nápovědu přímo ze souboru daného příkazu",
+              false
+            )
           ]
         ),
-        new Question(
-          "Jaká je alternativa k --help",
-          QuestionTypes.CHECKBOX,
-          [
-            new Answer("help", false),
-            new Answer("whatis", true),
-            new Answer("--h", true),
-            new Answer("-h", false)
-          ]
-        ),
+        new Question("Jaká je alternativa k --help", QuestionTypes.CHECKBOX, [
+          new Answer("help", false),
+          new Answer("whatis", true),
+          new Answer("--h", true),
+          new Answer("-h", false)
+        ])
       ]),
-      new Test('4. Lekce: Práce s textem','l4', [
+      new Test("4. Lekce: Práce s textem", "l4", [
         new Question(
           "Máme seznam žáků ve škole. Chceme si vypsat všechny žáky se jménem Katka. V souboru je ale jméno Katka s velkým i malým počátečním písmenem (Katka i katka). Jak budeme postupovat? Použijeme:",
           QuestionTypes.CHECKBOX,
@@ -419,10 +444,13 @@ export class CoursesProvider {
           "Mohu v příkazu (např. ls) použít více přepínačů zároveň?",
           QuestionTypes.CHECKBOX,
           [
-            new Answer('Ano. Můžu napsat např. ls -l -t', true),
-            new Answer('Ano. Můžu napsat např. ls -lt', true),
-            new Answer('Ne. Vždy můžu použít maximálně jeden přepínač.', false),
-            new Answer('Mohu použít více přepínačů, vykoná se ale jen ten první."', false)
+            new Answer("Ano. Můžu napsat např. ls -l -t", true),
+            new Answer("Ano. Můžu napsat např. ls -lt", true),
+            new Answer("Ne. Vždy můžu použít maximálně jeden přepínač.", false),
+            new Answer(
+              'Mohu použít více přepínačů, vykoná se ale jen ten první."',
+              false
+            )
           ]
         ),
         new Question(
@@ -452,8 +480,14 @@ export class CoursesProvider {
           QuestionTypes.CHECKBOX,
           [
             new Answer("Adresáře můžu mazat výhradně příkazem rmdir.", false),
-            new Answer("Můžu, ale s jednou výjimkou. Příkaz rm nedokáže smazat prázdný adresář.", false),
-            new Answer("Můžu, ale při mazání adresářů musím pro příkaz rm použít přepínač.", true)
+            new Answer(
+              "Můžu, ale s jednou výjimkou. Příkaz rm nedokáže smazat prázdný adresář.",
+              false
+            ),
+            new Answer(
+              "Můžu, ale při mazání adresářů musím pro příkaz rm použít přepínač.",
+              true
+            )
           ]
         ),
         new Question(
@@ -493,20 +527,116 @@ export class CoursesProvider {
           [
             new Answer("Forever", false),
             new Answer("Linux", true),
-            new Answer('Admin', false)
+            new Answer("Admin", false)
+          ]
+        ),
+        new Question("K čemu slouží příkaz diff?", QuestionTypes.CHECKBOX, [
+          new Answer("Ukazuje rozdíly ve velikosti souborů.", false),
+          new Answer("Vyhledává rozdíly v obsahu souborů po řádcích.", true),
+          new Answer("Zobrazuje podrobné informace o souboru.", false),
+          new Answer("Vyhledává daný vzor v souboru.", false),
+          new Answer(
+            "Nahrazuje v souboru všechny výskyty prvního argumentu za argument druhý.",
+            false
+          )
+        ])
+      ]),
+      new Test("5. Lekce: Vim", "l5", [
+        new Question("Co je výhodou editoru Vim?", QuestionTypes.CHECKBOX, [
+          new Answer("Příjemné uživatelské rozhraní", false),
+          new Answer("Funguje na většině linuxových distribucí", true),
+          new Answer("Jednoduché ovládání", false)
+        ]),
+        new Question(
+          "Kterou klávesou opouštím tzv. INSERT mód?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("i", false),
+            new Answer("Escape", true),
+            new Answer("Enter", false),
+            new Answer("q", false)
           ]
         ),
         new Question(
-          "K čemu slouží příkaz diff?",
+          "Kterou zkratku používáme ve Vim pro skenování souboru?",
           QuestionTypes.CHECKBOX,
           [
-            new Answer("Ukazuje rozdíly ve velikosti souborů.", false),
-            new Answer('Vyhledává rozdíly v obsahu souborů po řádcích.', true),
-            new Answer("Zobrazuje podrobné informace o souboru.", false),
-            new Answer('Vyhledává daný vzor v souboru.', false),
-            new Answer("Nahrazuje v souboru všechny výskyty prvního argumentu za argument druhý.", false)
+            new Answer("w, a, s, d", false),
+            new Answer("h, j, k, l", true),
+            new Answer("šipky nahoru, dolů, doleva, doprava", false),
+            new Answer("1, 2, 3, 4", false)
           ]
         ),
+        new Question(
+          "Která klávesová zkratka slouží k opuštění editoru bez uložení?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(":wq", false),
+            new Answer(":q!", true),
+            new Answer(":x", false)
+          ]
+        ),
+        new Question(
+          "V jakých módech můžeme pracovat ve vimu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("příkazový", true),
+            new Answer("vkládací", true),
+            new Answer("mazací", false),
+            new Answer("bashovský", false)
+          ]
+        ),
+        new Question(
+          "Které z těchto klávesových kombinací lze použít v editoru Vim?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Shift + g", true),
+            new Answer("Shift + a", true),
+            new Answer("i", true),
+            new Answer("dd", true),
+            new Answer(":wq", true)
+          ]
+        ),
+        new Question(
+          "Co to znamená, že je Vim 'modální' editor?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Znamená to, že pracuje v různých módech.", true),
+            new Answer("Znamená to, že do něho můžeme nainstalovat různé moduly pro práci.", false),
+            new Answer("Znamená to, že funguje jako modální (vyskakovací) okno a operuje mimo terminál.", false),
+            new Answer("Znamená to, že se chová v závislosti na módu, ve kterém se zrovna nacházím.", true)
+          ]
+        ),
+        new Question(
+          "Pomocí které zkratky vrátíme zpět poslední změnu?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("Ctrl + z", false),
+            new Answer("u", true),
+            new Answer("Ctrl + r", false),
+            new Answer("Z", false)
+          ]
+        ),
+        new Question(
+          "Jak se dostaneme v NORMAL módu na začátek souboru?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("G", false),
+            new Answer("gg", true),
+            new Answer("1G", true),
+            new Answer("GG", false)
+          ]
+        ),
+        new Question(
+          "Kterým příkazem uložení změny a ukončíme Vim?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer(":!", false),
+            new Answer(":q!", false),
+            new Answer(":qw", false),
+            new Answer(":wq", true)
+          ]
+        )
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [])
