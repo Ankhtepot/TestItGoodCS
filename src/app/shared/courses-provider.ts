@@ -468,7 +468,7 @@ export class CoursesProvider {
           ]
         ),
         new Question(
-          "Vyber správné formy zápisu příkazu tr, které budou mít výstup Alps.",
+          "Vyber správné varianty použití příkazu cut, které vyfiltrují sloupec s uživateli ze souboru /etc/passwd.",
           QuestionTypes.CHECKBOX,
           [
             new Answer("cut -f1 /etc/passwd", false),
