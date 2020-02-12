@@ -637,6 +637,56 @@ export class CoursesProvider {
             new Answer(":wq", true)
           ]
         )
+      ]),
+      new Test('6. Lekce: Unixový čas', 'l6', [
+        new Question(
+          "Spadá unixový čas to POSIX standardů?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("ano", true),
+            new Answer("ne", false)
+          ]
+        ),
+        new Question(
+          "Jak můžeme zobrazit aktuální unixový čas?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("date -u", false),
+            new Answer("date +%u", false),
+            new Answer("date +%s", true),
+            new Answer("date -%s", false)
+          ]
+        ),
+        new Question(
+          "Jak zobrazíme aktuální rok?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("date +%R", false),
+            new Answer("date +%Y", true),
+            new Answer("date +%y", false),
+            new Answer("date +Y", false)
+          ]
+        ),
+        new Question(
+          "Jak zobrazíme datum v tomto formátu?: Wed 12 19",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("date +'%A %I %Y'", false),
+            new Answer("date +'%a %I %y'", true),
+            new Answer("date +'%a %i %y'", false),
+            new Answer("date +%a %i %y", false)
+          ]
+        ),
+        new Question(
+          "Jak získáme unixový čas pro 10. prosince 2019?",
+          QuestionTypes.CHECKBOX,
+          [
+            new Answer("date +%s '12/10/2019'", false),
+            new Answer("date +%s -d '12/10/2019'", true),
+            new Answer("date '12/10/2019' +%s", false),
+            new Answer("date -d '12/10/2019' +%s", true)
+          ]
+        )
       ])
     ]),
     new Course("Python Akademie", "python", "engetoB", [])
